@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="te" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ఖగోళ భూగోళశాస్త్రం - భూమి, అక్షాంశాలు, రేఖాంశాలు & సమయం | Rahul Academy</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Noto Sans Telugu & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans Telugu"', 'Outfit', 'sans-serif'],
+          },
+          colors: {
+            deepBg: '#050508',
+            cardBg: '#0e0e17',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050508;
+      color: #f1f5f9;
+      font-family: 'Noto Sans Telugu', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Rahul Academy Repeated Watermark Layer */
+    .watermark-grid {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax(220px, 1fr));
+      opacity: 0.045;
+      user-select: none;
+    }
+
+    .watermark-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-25deg);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+
+    .watermark-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: #ec4899;
+    }
+
+    .glass-card {
+      background: rgba(14, 14, 23, 0.88);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    .glow-cyan { box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35); }
+    .glow-purple { box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.35); }
+    .glow-emerald { box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35); }
+    .glow-amber { box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.35); }
+    .glow-pink { box-shadow: 0 0 25px -5px rgba(236, 72, 153, 0.35); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #09090e; }
+    ::-webkit-scrollbar-thumb { background: #27273a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b3b55; }
+  </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black">
+
+  <!-- Rahul Academy Repeated Watermark Layer -->
+  <div class="watermark-grid">
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+    <div class="watermark-item"><span>RAHUL ACADEMY</span><span class="watermark-sub">GEOGRAPHY NOTES</span></div>
+  </div>
+
+  <!-- బ్యాక్‌గ్రౌండ్ గ్లో ఎఫెక్ట్స్ -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-32 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- హెడర్ -->
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-[#07070ce6] backdrop-blur-md px-4 lg:px-8 py-3.5">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="p-2 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 shadow-lg shadow-cyan-500/20">
+            <i data-lucide="globe-2" class="w-6 h-6 text-white animate-spin" style="animation-duration: 20s;"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-xl md:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-300 to-pink-400">
+                ఖగోళ భూగోళశాస్త్రం (Astronomical Geography)
+              </h1>
+              <span class="text-[11px] font-bold text-amber-300 border border-amber-500/40 bg-amber-950/40 px-2 py-0.5 rounded-full tracking-wider">RAHUL ACADEMY</span>
+            </div>
+            <p class="text-xs text-slate-400">సౌర కుటుంబం, భూమి ఆవిర్భావం, పరిమాణం & భ్రమణం (UPSC / APPSC / TSPSC ప్రత్యేకం)</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="#mindmap" class="px-3.5 py-1.5 rounded-lg text-xs md:text-sm font-semibold border border-cyan-500/40 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+            <i data-lucide="git-fork" class="w-4 h-4"></i>
+            <span>ఇంటరాక్టివ్ మైండ్‌మ్యాప్</span>
+          </a>
+          <button onclick="openQuizModal()" class="px-3.5 py-1.5 rounded-lg text-xs md:text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-600/30 hover:opacity-95 transition flex items-center gap-1.5">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>ప్రాక్టీస్ క్విజ్</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 w-full space-y-12">
+
+      <!-- బ్యానర్ కార్డ్ -->
+      <section class="glass-card rounded-2xl p-6 md:p-8 relative overflow-hidden border border-cyan-500/30 glow-cyan">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold mb-4">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            Rahul Academy • భౌతిక భూగోళశాస్త్రం బేసిక్స్
+          </div>
+          <h2 class="text-2xl md:text-4xl font-extrabold leading-tight text-white mb-3">
+            విశ్వంలో భూమి, కాల ప్రమాణాలు & భ్రమణ చలనాలు
+          </h2>
+          <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+            UPSC ప్రిలిమ్స్ మరియు గ్రూప్స్ పరీక్షల్లో భూమి ఆకారం (Oblate Spheroid), సౌర వ్యవస్థలోని గ్రహాల లక్షణాలు, జియోలాజికల్ టైమ్‌స్కేల్ మరియు భ్రమణం పై కాన్సెప్ట్ ప్రశ్నలు వస్తాయి. కింద ఉన్న 
+            <span class="text-amber-300 font-bold underline decoration-amber-400">"డయాగ్రమ్ చూడండి"</span> బటన్లపై క్లిక్ చేసి ఇంటరాక్టివ్ విజువల్స్ చూడవచ్చు!
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-black/50 border border-cyan-500/30">
+              <span class="text-slate-400 block mb-1">నెబ్యులార్ పరికల్పన</span>
+              <strong class="text-cyan-300 text-sm">~4.6 బిలియన్ సం. క్రితం</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-black/50 border border-purple-500/30">
+              <span class="text-slate-400 block mb-1">భూమి ఆకారం</span>
+              <strong class="text-purple-300 text-sm">జియోయిడ్ / Oblate Spheroid</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-black/50 border border-emerald-500/30">
+              <span class="text-slate-400 block mb-1">చంద్రుని ఆవిర్భావం</span>
+              <strong class="text-emerald-300 text-sm">థీయా (Theia) తాకిడి</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-black/50 border border-pink-500/30">
+              <span class="text-slate-400 block mb-1">సౌర కుటుంబంలో గ్రహాలు</span>
+              <strong class="text-pink-300 text-sm">8 గ్రహాలు & ఉపగ్రహాలు</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ఇంటరాక్టివ్ మైండ్‌మ్యాప్ సెక్షన్ -->
+      <section id="mindmap" class="space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-cyan-400 text-xs tracking-wider uppercase font-semibold">కాన్సెప్ట్ మైండ్‌మ్యాప్</span>
+            <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+              <i data-lucide="git-commit" class="text-purple-400 w-6 h-6"></i>
+              ఖగోళ భూగోళశాస్త్రం - ఇంటరాక్టివ్ మైండ్‌మ్యాప్
+            </h3>
+            <p class="text-xs text-slate-400">ఏదైనా నోడ్ పై క్లిక్ చేయండి, కింద వివరణ కనిపిస్తుంది.</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-300 rounded font-semibold">
+            Rahul Academy Edition
+          </span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-4 md:p-6 border border-white/10 bg-[#080811] relative overflow-x-auto shadow-2xl">
+          <div class="min-w-[760px] flex flex-col items-center">
+            
+            <!-- సెంట్రల్ నోడ్ -->
+            <button onclick="showMindmapDetail('geo_overview')" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 text-white font-bold text-base md:text-lg shadow-xl shadow-cyan-500/20 hover:scale-105 transition cursor-pointer border border-cyan-400/40 flex items-center gap-2">
+              <i data-lucide="globe" class="w-6 h-6 text-cyan-200"></i>
+              <span>ఖగోళ భూగోళశాస్త్రం (ASTRONOMICAL GEOGRAPHY)</span>
+            </button>
+
+            <!-- కనెక్టింగ్ లైన్లు -->
+            <svg class="w-full h-16 pointer-events-none" viewBox="0 0 760 64" fill="none">
+              <path d="M 380 0 L 380 20 L 75 20 L 75 64" stroke="#06b6d4" stroke-width="2.5" stroke-dasharray="4 4" />
+              <path d="M 380 0 L 380 20 L 230 20 L 230 64" stroke="#a855f7" stroke-width="2.5" stroke-dasharray="4 4" />
+              <path d="M 380 0 L 380 64" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4 4" />
+              <path d="M 380 0 L 380 20 L 530 20 L 530 64" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4 4" />
+              <path d="M 380 0 L 380 20 L 685 20 L 685 64" stroke="#ec4899" stroke-width="2.5" stroke-dasharray="4 4" />
+            </svg>
+
+            <!-- 5 బ్రాంచీలు -->
+            <div class="grid grid-cols-5 gap-3 w-full text-center">
+              
+              <button onclick="showMindmapDetail('nebular')" class="p-3 rounded-xl bg-cardBg border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-950/30 transition flex flex-col items-center group">
+                <div class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-1 group-hover:scale-110 transition">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </div>
+                <strong class="text-xs md:text-sm text-cyan-300">1. సౌర ఆవిర్భావం</strong>
+                <span class="text-[11px] text-slate-400">నెబ్యులార్ పరికల్పన</span>
+              </button>
+
+              <button onclick="showMindmapDetail('planets')" class="p-3 rounded-xl bg-cardBg border border-purple-500/40 hover:border-purple-400 hover:bg-purple-950/30 transition flex flex-col items-center group">
+                <div class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center mb-1 group-hover:scale-110 transition">
+                  <i data-lucide="orbit" class="w-4 h-4"></i>
+                </div>
+                <strong class="text-xs md:text-sm text-purple-300">2. సౌర వ్యవస్థ</strong>
+                <span class="text-[11px] text-slate-400">టెరెస్ట్రియల్ & గ్యాస్ జెయింట్స్</span>
+              </button>
+
+              <button onclick="showMindmapDetail('geotime')" class="p-3 rounded-xl bg-cardBg border border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-950/30 transition flex flex-col items-center group">
+                <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-1 group-hover:scale-110 transition">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                </div>
+                <strong class="text-xs md:text-sm text-emerald-300">3. జియోలాజికల్ కాలం</strong>
+                <span class="text-[11px] text-slate-400">ఇయాన్స్, ఎరాలు & విలుప్తతలు</span>
+              </button>
+
+              <button onclick="showMindmapDetail('shape')" class="p-3 rounded-xl bg-cardBg border border-amber-500/40 hover:border-amber-400 hover:bg-amber-950/30 transition flex flex-col items-center group">
+                <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center mb-1 group-hover:scale-110 transition">
+                  <i data-lucide="disc" class="w-4 h-4"></i>
+                </div>
+                <strong class="text-xs md:text-sm text-amber-300">4. భూమి ఆకారం</strong>
+                <span class="text-[11px] text-slate-400">Oblate Spheroid కొలతలు</span>
+              </button>
+
+              <button onclick="showMindmapDetail('rotation')" class="p-3 rounded-xl bg-cardBg border border-pink-500/40 hover:border-pink-400 hover:bg-pink-950/30 transition flex flex-col items-center group">
+                <div class="w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center mb-1 group-hover:scale-110 transition">
+                  <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                </div>
+                <strong class="text-xs md:text-sm text-pink-300">5. భూ భ్రమణం</strong>
+                <span class="text-[11px] text-slate-400">పడమర నుండి తూర్పుకు</span>
+              </button>
+            </div>
+
+            <!-- మైండ్‌మ్యాప్ వివరాల బాక్స్ -->
+            <div id="mindmap-detail-panel" class="mt-6 w-full p-4 md:p-5 rounded-xl border border-cyan-500/30 bg-[#090b14] text-left transition-all duration-300">
+              <div class="flex items-center justify-between pb-2 border-b border-white/10 mb-3">
+                <div class="flex items-center gap-2">
+                  <span id="mm-tag" class="text-xs px-2.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-bold">పరిచయం</span>
+                  <h4 id="mm-title" class="text-lg font-bold text-white">ఖగోళ భూగోళశాస్త్రం సమగ్ర అధ్యయనం</h4>
+                </div>
+                <span class="text-xs text-amber-400 font-semibold">Rahul Academy Notes</span>
+              </div>
+              <p id="mm-desc" class="text-sm text-slate-300 leading-relaxed mb-3">
+                ఖగోళ భూగోళశాస్త్రం అనేది భూమిని ఒక ఖగోళ వస్తువుగా పరిగణిస్తూ దాని ఆకారం, కొలతలు, చలనాలు (భ్రమణం, పరిభ్రమణం) మరియు వాటి పర్యవసానాలను వివరిస్తుంది.
+              </p>
+              <div id="mm-bullets" class="grid sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                <div class="p-2 rounded bg-white/5 border border-white/5 flex items-start gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span><strong>భూమి వయస్సు:</strong> ~4.54 బిలియన్ సంవత్సరాలు; థీయా తాకిడి వల్ల చంద్రుడు ఏర్పడ్డాడు.</span>
+                </div>
+                <div class="p-2 rounded bg-white/5 border border-white/5 flex items-start gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span><strong>భూమి ఆకారం:</strong> ధ్రువాల వద్ద చదునుగా, భూమధ్యరేఖ వద్ద ఉబ్బెత్తుగా ఉండే జియోయిడ్.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- విభాగం 01: సౌర వ్యవస్థ & భూమి ఆవిర్భావం -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-8 bg-cyan-500 rounded-full"></div>
+          <div>
+            <span class="text-xs text-cyan-400 uppercase tracking-widest font-semibold">విభాగం 01 • Rahul Academy</span>
+            <h3 class="text-2xl font-bold text-white">సౌర వ్యవస్థ & భూమి ఆవిర్భావం (Origin of Earth)</h3>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- నెబ్యులార్ పరికల్పన -->
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/30 flex flex-col justify-between hover:border-cyan-400 transition glow-cyan">
+            <div>
+              <div class="flex justify-between items-start mb-3">
+                <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">నెబ్యులార్ పరికల్పన</span>
+                <i data-lucide="sun" class="w-5 h-5 text-cyan-400"></i>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">నెబ్యులార్ హైపోథిసిస్ (Nebular Hypothesis)</h4>
+              <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                ఇమ్మాన్యుయేల్ కాంట్ (1755) ప్రతిపాదించగా, లాప్లేస్ (1796) గణిత శాస్త్రపరంగా మెరుగుపరిచారు. సూపర్ నోవా విస్ఫోటనంతో వాయువులు, ధూళికణాల మేఘం గురుత్వాకర్షణతో కుంచించుకుపోయింది.
+              </p>
+              
+              <div class="bg-black/50 p-3 rounded-xl border border-white/5 space-y-2 mb-4 text-xs">
+                <p><span class="text-cyan-400 font-semibold">ప్రోటో-సన్:</span> నెబ్యులా ద్రవ్యరాశిలో ~99.86% కేంద్రంలో చేరి సూర్యుడిగా మారింది.</p>
+                <p><span class="text-cyan-400 font-semibold">ప్లానెటెసిమల్స్:</span> ధూళికణాలు ఒకదానికొకటి కలిసి (accretion) కిలోమీటర్ల పరిమాణమున్న ప్లానెటెసిమల్స్‌గా ఏర్పడ్డాయి.</p>
+                <p><span class="text-cyan-400 font-semibold">గ్రహాల నిర్మాణం:</span> అంతర్గత ఉష్ణోగ్రతల వద్ద రాతి గ్రహాలు, శీతల బాహ్య ప్రాంతాల్లో వాయు గ్రహాలు ఏర్పడ్డాయి.</p>
+              </div>
+            </div>
+
+            <div>
+              <button onclick="toggleDiagram('diag-nebula')" class="w-full py-2.5 px-3 rounded-xl text-xs font-semibold bg-cyan-500/15 border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/25 flex items-center justify-center gap-2 transition">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+                <span id="btn-text-diag-nebula">డయాగ్రమ్ చూడండి (నెబ్యులార్ డిస్క్ ఎనిమేషన్)</span>
+              </button>
+
+              <div id="diag-nebula" class="hidden mt-4 p-3 bg-black/80 rounded-xl border border-cyan-500/40 transition-all text-center">
+                <div class="text-xs text-cyan-300 mb-2">ప్రోటో-సూర్యుడు & గ్రహాల డిస్క్ (Accretion)</div>
+                <div class="relative w-full h-36 bg-[#060814] rounded-lg overflow-hidden border border-white/10 flex items-center justify-center">
+                  <div class="w-10 h-10 bg-amber-400 rounded-full shadow-lg shadow-amber-400/80 animate-pulse"></div>
+                  <div class="absolute w-28 h-28 rounded-full border border-dashed border-cyan-400/40 animate-spin" style="animation-duration: 10s;"></div>
+                  <div class="absolute w-44 h-44 rounded-full border border-dashed border-purple-400/30 animate-spin" style="animation-duration: 20s;"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-2">కేంద్రంలో సూర్యుడు, చుట్టూ తిరుగుతున్న డిస్క్‌లో గ్రహాల కూడలి.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- భూమి అంతర్గత విభజన & చంద్రుని ఆవిర్భావం -->
+          <div class="glass-card rounded-2xl p-5 border border-purple-500/30 flex flex-col justify-between hover:border-purple-400 transition glow-purple">
+            <div>
+              <div class="flex justify-between items-start mb-3">
+                <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">భూమి & చంద్రుడు</span>
+                <i data-lucide="moon" class="w-5 h-5 text-purple-400"></i>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">భూమి పుట్టుక & థీయా తాకిడి</h4>
+              <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                భూమి సుమారు 4.54 బిలియన్ సంవత్సరాల క్రితం ఏర్పడింది. ద్రవరూపంలో ఉన్నప్పుడు బరువైన మూలకాలు (ఇనుము, నికెల్) కేంద్రంలోకి కుంగి కోర్ (Core) గా మారాయి.
+              </p>
+              
+              <div class="bg-black/50 p-3 rounded-xl border border-white/5 space-y-2 mb-4 text-xs">
+                <p><span class="text-purple-400 font-semibold">డిఫరెన్షియేషన్:</span> తేలికపాటి సిలికేట్లు పైకి చేరి క్రస్ట్, మాంటిల్‌గా ఏర్పడ్డాయి.</p>
+                <p><span class="text-purple-400 font-semibold">జెయింట్ ఇంపాక్ట్ సిద్ధాంతం:</span> కుజుడి పరిమాణమున్న 'థీయా' (Theia) అనే ఖగోళ వస్తువు తాకడం వల్ల వెలువడిన శిథిలాల నుంచి చంద్రుడు ఏర్పడ్డాడు (~4.5 Bya).</p>
+                <p><span class="text-purple-400 font-semibold">సముద్రాలు & జీవం:</span> అగ్నిపర్వత వాయువులు ఘనీభవించి సముద్రాలు (~4.4 Bya), స్ట్రోమటోలైట్స్ ద్వారా మొదటి జీవం (~3.8-3.5 Bya) వచ్చాయి.</p>
+              </div>
+            </div>
+
+            <div>
+              <button onclick="toggleDiagram('diag-theia')" class="w-full py-2.5 px-3 rounded-xl text-xs font-semibold bg-purple-500/15 border border-purple-500/40 text-purple-300 hover:bg-purple-500/25 flex items-center justify-center gap-2 transition">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+                <span id="btn-text-diag-theia">డయాగ్రమ్ చూడండి (థీయా ఇంపాక్ట్ & చంద్రుడు)</span>
+              </button>
+
+              <div id="diag-theia" class="hidden mt-4 p-3 bg-black/80 rounded-xl border border-purple-500/40 transition-all text-center">
+                <div class="text-xs text-purple-300 mb-2">Giant Impact: Theia vs Proto-Earth</div>
+                <div class="relative w-full h-36 bg-[#080814] rounded-lg border border-white/10 flex items-center justify-center gap-4">
+                  <div class="w-14 h-14 rounded-full bg-blue-600 border border-cyan-300 flex items-center justify-center text-[10px] font-bold">భూమి</div>
+                  <div class="w-7 h-7 rounded-full bg-red-500 border border-orange-300 flex items-center justify-center text-[8px] font-bold">థీయా</div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-2">థీయా ఢీకొనడం వల్ల ఏర్పడిన పదార్థం నుంచే చంద్రుడు రూపుదిద్దుకున్నాడు.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- సౌర కుటుంబం గ్రహాల డేటా -->
+          <div class="glass-card rounded-2xl p-5 border border-pink-500/30 flex flex-col justify-between hover:border-pink-400 transition glow-pink">
+            <div>
+              <div class="flex justify-between items-start mb-3">
+                <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-pink-500/20 text-pink-300 border border-pink-500/30">సౌర గ్రహాల సమాచారం</span>
+                <i data-lucide="database" class="w-5 h-5 text-pink-400"></i>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">గ్రహాల వర్గీకరణ & తాజా డేటా (2026)</h4>
+              <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                అంతర్గత (శిలామయ) గ్రహాలు: బుధుడు, శుక్రుడు, భూమి, కుజుడు. బాహ్య వాయు గ్రహాలు: బృహస్పతి, శని. మంచు రాక్షసులు (Ice Giants): యురేనస్, నెప్ట్యూన్.
+              </p>
+              
+              <div class="bg-black/50 p-3 rounded-xl border border-white/5 space-y-1.5 mb-4 text-xs">
+                <p><span class="text-pink-400 font-semibold">శని గ్రహం (Saturn):</span> సౌర వ్యవస్థలోనే అత్యధికంగా <strong>292 ధృవీకరించబడిన ఉపగ్రహాలు</strong> కలిగి ఉంది (IAU MPC 2026 నాటికి).</p>
+                <p><span class="text-pink-400 font-semibold">బృహస్పతి (Jupiter):</span> 115 ధృవీకరించబడిన ఉపగ్రహాలు కలిగి ఉంది.</p>
+                <p><span class="text-pink-400 font-semibold">ప్లూటో:</span> 2006 లో IAU దీనిని 'డ్వార్ఫ్ ప్లానెట్' (వామన గ్రహం) గా వర్గీకరించింది.</p>
+              </div>
+            </div>
+
+            <div>
+              <button onclick="toggleDiagram('diag-planets')" class="w-full py-2.5 px-3 rounded-xl text-xs font-semibold bg-pink-500/15 border border-pink-500/40 text-pink-300 hover:bg-pink-500/25 flex items-center justify-center gap-2 transition">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+                <span id="btn-text-diag-planets">డయాగ్రమ్ చూడండి (గ్రహాల పరిమాణాల పోలిక)</span>
+              </button>
+
+              <div id="diag-planets" class="hidden mt-4 p-3 bg-black/80 rounded-xl border border-pink-500/40 transition-all text-center">
+                <div class="text-xs text-pink-300 mb-2">సౌర వ్యవస్థ గ్రహాల పోలిక</div>
+                <div class="flex items-center justify-around h-24 bg-[#080812] rounded-lg p-2">
+                  <div class="flex flex-col items-center"><div class="w-2 h-2 rounded-full bg-slate-400"></div><span class="text-[9px] mt-1">బుధుడు</span></div>
+                  <div class="flex flex-col items-center"><div class="w-3.5 h-3.5 rounded-full bg-amber-200"></div><span class="text-[9px] mt-1">శుక్రుడు</span></div>
+                  <div class="flex flex-col items-center"><div class="w-4 h-4 rounded-full bg-blue-500"></div><span class="text-[9px] mt-1">భూమి</span></div>
+                  <div class="flex flex-col items-center"><div class="w-2.5 h-2.5 rounded-full bg-red-500"></div><span class="text-[9px] mt-1">కుజుడు</span></div>
+                  <div class="flex flex-col items-center"><div class="w-12 h-12 rounded-full bg-amber-600"></div><span class="text-[9px] mt-1">బృహస్పతి</span></div>
+                  <div class="flex flex-col items-center"><div class="w-10 h-10 rounded-full bg-yellow-500"></div><span class="text-[9px] mt-1">శని</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- విభాగం 02: జియోలాజికల్ టైమ్‌స్కేల్ & విలుప్తతలు -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-8 bg-purple-500 rounded-full"></div>
+          <div>
+            <span class="text-xs text-purple-400 uppercase tracking-widest font-semibold">విభాగం 02 • Rahul Academy</span>
+            <h3 class="text-2xl font-bold text-white">జియోలాజికల్ టైమ్‌స్కేల్ & 5 మహా విలుప్తతలు (Geological Timescale)</h3>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6">
+
+          <!-- టైమ్‌స్కేల్ వివరాలు -->
+          <div class="glass-card rounded-2xl p-6 border border-purple-500/30 glow-purple space-y-4">
+            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="layers" class="text-purple-400 w-5 h-5"></i>
+              భూమి కాలక్రమం: ఇయాన్స్ (Eons) & ఎరాలు (Eras)
+            </h4>
+            <div class="space-y-2.5 text-xs">
+              <div class="p-3 rounded-xl bg-purple-950/20 border border-purple-500/30">
+                <strong class="text-purple-300 block mb-1">1. హేడియన్ ఇయాన్ (4,600 - 4,000 Mya):</strong>
+                <p class="text-slate-300">భూమి నిర్మాణం, మాగ్మా మహాసముద్రాలు, చంద్రుని ఆవిర్భావం.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-purple-950/20 border border-purple-500/30">
+                <strong class="text-purple-300 block mb-1">2. ఆర్కియన్ ఇయాన్ (4,000 - 2,500 Mya):</strong>
+                <p class="text-slate-300">మొదటి ఖండాలు, ప్రోకార్యోటిక్ జీవులు, బ్యాండెడ్ ఐరన్ నిర్మాణాలు.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-purple-950/20 border border-purple-500/30">
+                <strong class="text-purple-300 block mb-1">3. ప్రొటెరోజోయిక్ ఇయాన్ (2,500 - 541 Mya):</strong>
+                <p class="text-slate-300">గ్రేట్ ఆక్సిడేషన్ ఈవెంట్ (~2.4 Bya), మొదటి యూకార్యోట్లు, బహుకణ జీవులు, స్నోబాల్ ఎర్త్.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-purple-950/20 border border-purple-500/30">
+                <strong class="text-purple-300 block mb-1">4. ఫానెరోజోయిక్ ఇయాన్ (541 Mya - నేటివరకు):</strong>
+                <p class="text-slate-300">పాలియోజోయిక్ (చేపలు, ఉభయచరాలు), మీసోజోయిక్ (డైనోసార్లు), సెనోజోయిక్ (క్షీరదాలు, మానవ పరిణామం).</p>
+              </div>
+            </div>
+            <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] text-amber-200">
+              <strong>పరీక్ష ముఖ్య పాయింట్:</strong> ప్రస్తుతం మనం ఫానెరోజోయిక్ ఇయాన్ లోని సెనోజోయిక్ ఎరా, క్వాటర్నరీ పీరియడ్ లోని <strong>హోలోసీన్ (Holocene)</strong> యుగంలో జీవిస్తున్నాము!
+            </div>
+          </div>
+
+          <!-- 5 మహా విలుప్తతలు (Big Five Mass Extinctions) -->
+          <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4">
+            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="skull" class="text-pink-400 w-5 h-5"></i>
+              భూమి చరిత్రలో 5 మహా విలుప్తతలు (Big Five Extinctions)
+            </h4>
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded-lg bg-cardBg border border-pink-500/20 flex justify-between items-center">
+                <div>
+                  <strong class="text-pink-300">1. ఓర్డోవిషియన్ - సిలూరియన్ (~444 Mya)</strong>
+                  <p class="text-slate-400 text-[10px]">హిమానీనదం మరియు సముద్ర మట్టాల క్షీణత</p>
+                </div>
+                <span class="text-slate-400 font-mono">85% జాతులు నశించాయి</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-cardBg border border-pink-500/20 flex justify-between items-center">
+                <div>
+                  <strong class="text-pink-300">2. లేట్ డెవోనియన్ (~375 Mya)</strong>
+                  <p class="text-slate-400 text-[10px]">సముద్రాలలో ఆక్సిజన్ క్షీణత (Anoxia)</p>
+                </div>
+                <span class="text-slate-400 font-mono">75% జాతులు</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-red-950/30 border border-red-500/40 flex justify-between items-center">
+                <div>
+                  <strong class="text-red-300">3. పెర్మియన్ - ట్రయాసిక్ (~252 Mya) - "The Great Dying"</strong>
+                  <p class="text-slate-300 text-[10px]">భూమి చరిత్రలో అతిపెద్ద విలుప్తత; సైబీరియన్ ట్రాప్స్ విస్ఫోటనం</p>
+                </div>
+                <span class="text-red-400 font-bold font-mono">~96% సముద్ర జీవులు</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-cardBg border border-pink-500/20 flex justify-between items-center">
+                <div>
+                  <strong class="text-pink-300">4. ట్రయాసిక్ - జురాసిక్ (~201 Mya)</strong>
+                  <p class="text-slate-400 text-[10px]">పాంజియా విచ్ఛిన్నం మరియు తీవ్ర అగ్నిపర్వత చర్యలు</p>
+                </div>
+                <span class="text-slate-400 font-mono">80% జాతులు</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-cardBg border border-pink-500/20 flex justify-between items-center">
+                <div>
+                  <strong class="text-pink-300">5. క్రెటేషియస్ - పాలియోజీన్ / K-Pg (~66 Mya)</strong>
+                  <p class="text-slate-400 text-[10px]">చిక్సులబ్ (Chicxulub) గ్రహశకలం తాకిడి + దక్కన్ ట్రాప్స్ లావా; డైనోసార్ల అంతం</p>
+                </div>
+                <span class="text-slate-400 font-mono">76% జాతులు</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- విభాగం 03: భూమి ఆకారం, కొలతలు & రుజువులు -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-8 bg-emerald-500 rounded-full"></div>
+          <div>
+            <span class="text-xs text-emerald-400 uppercase tracking-widest font-semibold">విభాగం 03 • Rahul Academy</span>
+            <h3 class="text-2xl font-bold text-white">భూమి ఆకారం, కొలతలు & భ్రమణం (Shape & Dimensions)</h3>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+
+          <!-- భూమి కొలతలు -->
+          <div class="glass-card rounded-2xl p-5 border border-emerald-500/30 glow-emerald space-y-4">
+            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="scale" class="text-emerald-400 w-5 h-5"></i>
+              భూమి ప్రామాణిక కొలతలు
+            </h4>
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex justify-between">
+                <span class="text-slate-300">భూమధ్యరేఖా వ్యాసార్థం</span>
+                <span class="text-emerald-300 font-bold">6,378.14 కి.మీ</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex justify-between">
+                <span class="text-slate-300">ధ్రువ వ్యాసార్థం</span>
+                <span class="text-emerald-300 font-bold">6,356.75 కి.మీ</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex justify-between">
+                <span class="text-slate-300">వ్యాసార్థాల వ్యత్యాసం</span>
+                <span class="text-amber-300 font-bold">~21 కి.మీ</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex justify-between">
+                <span class="text-slate-300">భూమధ్యరేఖా చుట్టుకొలత</span>
+                <span class="text-cyan-300 font-bold">~40,075 కి.మీ</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex justify-between">
+                <span class="text-slate-300">ధ్రువ చుట్టుకొలత</span>
+                <span class="text-cyan-300 font-bold">~40,008 కి.మీ</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex justify-between">
+                <span class="text-slate-300">మొత్తం ఉపరితల వైశాల్యం</span>
+                <span class="text-purple-300 font-bold">~510 మిలియన్ చ.కి.మీ</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex justify-between">
+                <span class="text-slate-300">భూభాగం vs జలభాగం</span>
+                <span class="text-pink-300 font-bold">29.2% vs 70.8%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ఆకారపు రుజువులు -->
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/30 glow-cyan space-y-4">
+            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="eye" class="text-cyan-400 w-5 h-5"></i>
+              భూమి గోళాకారానికి రుజువులు
+            </h4>
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="p-2.5 rounded-xl bg-cyan-950/20 border border-cyan-500/30">
+                <strong>1. ఓడల దృగ్విషయం:</strong> సముద్ర తీరానికి వచ్చే ఓడలలో ముందుగా పైభాగం (Mast) కనిపించి, చివరగా కింద హల్ (Hull) కనిపిస్తుంది.
+              </div>
+              <div class="p-2.5 rounded-xl bg-cyan-950/20 border border-cyan-500/30">
+                <strong>2. చంద్రగ్రహణ నీడ:</strong> చంద్రగ్రహణ సమయంలో చంద్రునిపై పడే భూమి నీడ ఎల్లప్పుడూ వృత్తాకారంలోనే ఉంటుంది.
+              </div>
+              <div class="p-2.5 rounded-xl bg-cyan-950/20 border border-cyan-500/30">
+                <strong>3. భూ ప్రదక్షిణ:</strong> మెగల్లాన్ నౌకా యాత్ర (1519-1522) ఒకే దిశలో ప్రయాణించి ప్రారంభ స్థానానికి చేరుకోవడం.
+              </div>
+              <div class="p-2.5 rounded-xl bg-cyan-950/20 border border-cyan-500/30">
+                <strong>4. ఉపగ్రహ ఛాయాచిత్రాలు:</strong> అంతరిక్షం నుంచి తీసిన ఛాయాచిత్రాలు భూమి వక్రతను స్పష్టంగా రుజువు చేస్తున్నాయి.
+              </div>
+            </div>
+          </div>
+
+          <!-- భ్రమణం (Rotation) -->
+          <div class="glass-card rounded-2xl p-5 border border-amber-500/30 glow-amber space-y-4">
+            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="refresh-cw" class="text-amber-400 w-5 h-5"></i>
+              భూ భ్రమణం (Earth's Rotation)
+            </h4>
+            <div class="space-y-2.5 text-xs">
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5">
+                <strong class="text-amber-300 block mb-1">దిశ:</strong>
+                <span class="text-slate-300">పడమర నుండి తూర్పుకు (West to East) - ఉత్తర ధ్రువం పైనుంచి చూస్తే అపసవ్య దిశ (Anti-clockwise).</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5">
+                <strong class="text-cyan-300 block mb-1">భ్రమణ కాలం:</strong>
+                <span class="text-slate-300">నక్షత్ర దినం: 23 గంటల 56 నిమిషాల 4 సెకన్లు; సౌర దినం: 24 గంటలు.</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-black/40 border border-white/5">
+                <strong class="text-emerald-300 block mb-1">భ్రమణ వేగం:</strong>
+                <p class="text-slate-300">• భూమధ్యరేఖ వద్ద: <strong>~1,670 కి.మీ/గం (~465 మీ/సె)</strong></p>
+                <p class="text-slate-300">• ధ్రువాల వద్ద: <strong>0 కి.మీ/గం</strong></p>
+              </div>
+              <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-500/40">
+                <strong class="text-purple-300 block mb-1">ఫలితాలు:</strong>
+                <span class="text-slate-300">రాత్రింబవళ్లు ఏర్పడటం, కొరియోలిస్ ప్రభావం వల్ల గాలులు/సముద్ర ప్రవాహాలు వంపు తిరగడం.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- క్విజ్ కాల్ టు యాక్షన్ -->
+      <section class="glass-card rounded-2xl p-6 md:p-8 border border-white/10 glow-purple text-center relative overflow-hidden">
+        <div class="max-w-2xl mx-auto space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center mx-auto shadow-lg shadow-purple-500/30">
+            <i data-lucide="help-circle" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-2xl font-extrabold text-white">మీ భౌగోళిక విజ్ఞానాన్ని పరీక్షించుకోండి!</h3>
+          <p class="text-xs md:text-sm text-slate-300">
+            ఖగోళ భూగోళశాస్త్రం, సౌర కుటుంబం, భూమి ఆకారం & భ్రమణం పై UPSC/PSC పోటీ పరీక్షల్లో అడిగే 5 ముఖ్యమైన ప్రశ్నలను ప్రాక్టీస్ చేయండి.
+          </p>
+          <div class="pt-2">
+            <button onclick="openQuizModal()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 text-white font-bold text-sm shadow-xl hover:scale-105 transition cursor-pointer flex items-center gap-2 mx-auto">
+              <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+              తెలుగు జాగ్రఫీ క్విజ్ ప్రారంభించండి
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="border-t border-white/10 bg-[#040408] py-6 px-4 text-center text-xs text-slate-500">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-cyan-400">RAHUL ACADEMY</span>
+          <span>• ఖగోళ భూగోళశాస్త్రం (Astronomical Geography)</span>
+        </div>
+        <span class="text-slate-400 font-mono">Dark Neon Edition • Official Watermark Protected</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- క్విజ్ మోడల్ (Modal) -->
+  <div id="quiz-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-[#0b0c16] border border-cyan-500/40 rounded-2xl max-w-xl w-full p-6 shadow-2xl space-y-5 glow-cyan relative max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-square" class="text-cyan-400 w-5 h-5"></i>
+          <div>
+            <h3 class="text-lg font-bold text-white">భౌగోళశాస్త్రం ప్రాక్టీస్ టెస్ట్</h3>
+            <span class="text-[10px] text-amber-400 font-semibold">Rahul Academy Geography Bank</span>
+          </div>
+        </div>
+        <button onclick="closeQuizModal()" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/10">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div id="quiz-content">
+        <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+          <span id="quiz-step">ప్రశ్న 1 / 5</span>
+          <span id="quiz-score" class="font-mono text-cyan-400">స్కోరు: 0</span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white/5 border border-white/5 text-sm md:text-base font-semibold text-white mb-4" id="quiz-question">
+          ప్రశ్న లోడ్ అవుతోంది...
+        </div>
+
+        <div class="space-y-2.5" id="quiz-options"></div>
+
+        <div id="quiz-feedback" class="hidden mt-4 p-3 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <div class="flex justify-between items-center pt-3 border-t border-white/10">
+        <button onclick="resetQuiz()" class="text-xs text-slate-400 hover:text-slate-200">రీస్టార్ట్ చేయండి</button>
+        <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold transition">
+          తరువాతి ప్రశ్న →
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+
+    function toggleDiagram(diagramId) {
+      const diagElement = document.getElementById(diagramId);
+      const btnText = document.getElementById('btn-text-' + diagramId);
+      if (!diagElement) return;
+
+      if (diagElement.classList.contains('hidden')) {
+        diagElement.classList.remove('hidden');
+        if (btnText) {
+          btnText.textContent = btnText.textContent.replace('చూడండి', 'దాచండి');
+        }
+      } else {
+        diagElement.classList.add('hidden');
+        if (btnText) {
+          btnText.textContent = btnText.textContent.replace('దాచండి', 'చూడండి');
+        }
+      }
+    }
+
+    const mindmapData = {
+      geo_overview: {
+        tag: 'సమగ్ర సమాచారం',
+        title: 'ఖగోళ భూగోళశాస్త్రం (Astronomical Geography)',
+        desc: 'భూమి ఖగోళ లక్షణాలు, సౌర వ్యవస్థలో దాని స్థానం, కాలాన్ని నిర్ణయించే అక్షాంశ రేఖాంశాలు మరియు భ్రమణ పరిభ్రమణాల అధ్యయనం.',
+        bullets: [
+          'భూమి వయస్సు: సుమారు 4.54 బిలియన్ సంవత్సరాలు.',
+          'భ్రమణ వేగం: భూమధ్యరేఖ వద్ద గరిష్టం (~1,670 కి.మీ/గం), ధ్రువాల వద్ద సున్నా.'
+        ]
+      },
+      nebular: {
+        tag: 'సౌర ఆవిర్భావం',
+        title: 'నెబ్యులార్ పరికల్పన (కాంట్ & లాప్లేస్)',
+        desc: 'ధూళి మరియు వాయువుల మేఘం కుంచించుకుపోయి మధ్యలో ప్రోటో-సూర్యుడు, చుట్టూ ఉన్న డిస్క్‌లో గ్రహాలు ఏర్పడ్డాయి.',
+        bullets: [
+          'భారీ సూపర్ నోవా షాక్‌వేవ్ వల్ల మేఘం కుంచించుకుపోయింది.',
+          'ద్రవ్యరాశిలో ~99.86% సూర్యుడిగా మారింది.'
+        ]
+      },
+      planets: {
+        tag: 'సౌర వ్యవస్థ',
+        title: 'సౌర కుటుంబ గ్రహాల వర్గీకరణ',
+        desc: 'అంతర్గత శిలా గ్రహాలు చిన్నవిగా మరియు సాంద్రతతో ఉంటాయి. బాహ్య వాయు గ్రహాలు భారీ పరిమాణంతో అనేక ఉపగ్రహాలను కలిగి ఉంటాయి.',
+        bullets: [
+          'శని గ్రహానికి సౌర వ్యవస్థలోనే అత్యధికంగా 292 ఉపగ్రహాలు ఉన్నాయి (2026 నాటికి).',
+          'ప్లూటోను 2006 లో వామన గ్రహంగా మార్చారు.'
+        ]
+      },
+      geotime: {
+        tag: 'కాలక్రమం',
+        title: 'జియోలాజికల్ టైమ్‌స్కేల్ & విలుప్తతలు',
+        desc: 'హేడియన్, ఆర్కియన్, ప్రొటెరోజోయిక్ మరియు ఫానెరోజోయిక్ ఇయాన్స్‌లుగా భూమి చరిత్ర విభజించబడింది.',
+        bullets: [
+          'పెర్మియన్ విలుప్తత: అత్యంత భారీ విలుప్తత (~96% సముద్ర జాతులు నశించాయి).',
+          'ప్రస్తుతం మనం హోలోసీన్ (Holocene) యుగంలో ఉన్నాము.'
+        ]
+      },
+      shape: {
+        tag: 'ఆకారం & కొలతలు',
+        title: 'భూమి ఆకారం (Oblate Spheroid / Geoid)',
+        desc: 'భ్రమణం వల్ల కలిగే అపకేంద్ర బలం మూలంగా భూమి భూమధ్యరేఖ వద్ద ఉబ్బెత్తుగాను, ధ్రువాల వద్ద చదునుగాను ఉంటుంది.',
+        bullets: [
+          'భూమధ్యరేఖా వ్యాసార్థం ధ్రువ వ్యాసార్థం కన్నా ~21 కి.మీ ఎక్కువ.',
+          'భూమి ఉపరితలంలో 70.8% నీరు, 29.2% భూభాగం ఉంది.'
+        ]
+      },
+      rotation: {
+        tag: 'భూ భ్రమణం',
+        title: 'భూమి తన అక్షంపై తిరగడం',
+        desc: 'భూమి పడమర నుండి తూర్పుకు భ్రమణం చేయడం వల్ల సూర్యుడు తూర్పున ఉదయించి పశ్చిమాన అస్తమిస్తున్నట్లు కనిపిస్తాడు.',
+        bullets: [
+          'నక్షత్ర దినం (Sidereal Day): 23 గం. 56 నిమి. 4 సెకన్లు.',
+          'రాత్రింబవళ్లు మరియు కొరియోలిస్ ప్రభావానికి భ్రమణమే కారణం.'
+        ]
+      }
+    };
+
+    function showMindmapDetail(key) {
+      const item = mindmapData[key];
+      if (!item) return;
+
+      document.getElementById('mm-tag').textContent = item.tag;
+      document.getElementById('mm-title').textContent = item.title;
+      document.getElementById('mm-desc').textContent = item.desc;
+
+      const bulletsContainer = document.getElementById('mm-bullets');
+      bulletsContainer.innerHTML = item.bullets.map(b => `
+        <div class="p-2 rounded bg-white/5 border border-white/5 flex items-start gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+          <span>${b}</span>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    const quizQuestions = [
+      {
+        q: "భూమి ఆకారాన్ని వివరించడానికి అత్యంత సరైన సాంకేతిక పదం ఏది? (Rahul Academy Test)",
+        options: [
+          "ఖచ్చితమైన గోళం (Perfect Sphere)",
+          "అబ్లేట్ స్ఫిరాయిడ్ / జియోయిడ్ (Oblate Spheroid / Geoid)",
+          "దీర్ఘవృత్తం (Ellipse)",
+          "కోణాకార ఘనం (Cone)"
+        ],
+        correct: 1,
+        explanation: "సరైన సమాధానం! భ్రమణం వల్ల భూమి ధ్రువాల వద్ద చదునుగా, భూమధ్యరేఖ వద్ద ఉబ్బెత్తుగా ఉండే అబ్లేట్ స్ఫిరాయిడ్ (జియోయిడ్) ఆకారంలో ఉంటుంది."
+      },
+      {
+        q: "భూమధ్యరేఖా వ్యాసార్థానికి మరియు ధ్రువ వ్యాసార్థానికి మధ్య గల తేడా సుమారు ఎంత?",
+        options: [
+          "~10 కి.మీ",
+          "~21 కి.మీ",
+          "~45 కి.మీ",
+          "~100 కి.మీ"
+        ],
+        correct: 1,
+        explanation: "కరెక్ట్! భూమధ్యరేఖా వ్యాసార్థం (6,378 కి.మీ) మరియు ధ్రువ వ్యాసార్థం (6,357 కి.మీ) ల మధ్య తేడా సుమారు 21 కి.మీ."
+      },
+      {
+        q: "భూమి చరిత్రలో దాదాపు 96% సముద్ర జీవులు నశించిన అతిపెద్ద మహా విలుప్తత (The Great Dying) ఏది?",
+        options: [
+          "ఓర్డోవిషియన్-సిలూరియన్ విలుప్తత",
+          "లేట్ డెవోనియన్ విలుప్తత",
+          "పెర్మియన్-ట్రయాసిక్ విలుప్తత (Permian Extinction)",
+          "క్రెటేషియస్-పాలియోజీన్ (K-Pg) విలుప్తత"
+        ],
+        correct: 2,
+        explanation: "అద్భుతం! పెర్మియన్ విలుప్తత (~252 Mya) భూ చరిత్రలోనే అతిపెద్దది, దీనిని 'ది గ్రేట్ డయింగ్' అంటారు."
+      },
+      {
+        q: "సౌర కుటుంబంలో అత్యధిక ధృవీకరించబడిన ఉపగ్రహాలు (Moons) కలిగిన గ్రహం ఏది?",
+        options: [
+          "బృహస్పతి (Jupiter)",
+          "శని గ్రహం (Saturn)",
+          "యురేనస్ (Uranus)",
+          "నెప్ట్యూన్ (Neptune)"
+        ],
+        correct: 1,
+        explanation: "సరైనది! శని గ్రహం అత్యధికంగా 292 ధృవీకరించబడిన ఉపగ్రహాలతో సౌర వ్యవస్థలో ప్రథమ స్థానంలో ఉంది."
+      },
+      {
+        q: "భూమి భ్రమణ వేగం (Rotation Speed) క్రింది వాటిలో ఎక్కడ గరిష్టంగా ఉంటుంది?",
+        options: [
+          "ఉత్తర ధ్రువం వద్ద",
+          "దక్షిణ ధ్రువం వద్ద",
+          "భూమధ్యరేఖ వద్ద (~1,670 కి.మీ/గం)",
+          "కర్కట రేఖ వద్ద"
+        ],
+        correct: 2,
+        explanation: "కరెక్ట్! భూమధ్యరేఖ వద్ద భ్రమణ వేగం గరిష్టంగా (~1,670 కి.మీ/గం) ఉంటుంది, ధ్రువాల వద్ద సున్నా అవుతుంది."
+      }
+    ];
+
+    let currentQIndex = 0;
+    let quizScore = 0;
+
+    function openQuizModal() {
+      document.getElementById('quiz-modal').classList.remove('hidden');
+      loadQuizQuestion();
+    }
+
+    function closeQuizModal() {
+      document.getElementById('quiz-modal').classList.add('hidden');
+    }
+
+    function resetQuiz() {
+      currentQIndex = 0;
+      quizScore = 0;
+      document.getElementById('quiz-score').textContent = `స్కోరు: 0`;
+      loadQuizQuestion();
+    }
+
+    function loadQuizQuestion() {
+      const q = quizQuestions[currentQIndex];
+      document.getElementById('quiz-step').textContent = `ప్రశ్న ${currentQIndex + 1} / ${quizQuestions.length}`;
+      document.getElementById('quiz-question').textContent = q.q;
+      
+      const optionsContainer = document.getElementById('quiz-options');
+      optionsContainer.innerHTML = '';
+
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.classList.add('hidden');
+      document.getElementById('quiz-next-btn').classList.add('hidden');
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-xs md:text-sm text-slate-200 transition cursor-pointer flex items-center justify-between';
+        btn.innerHTML = `<span><strong>${['A', 'B', 'C', 'D'][idx]}.</strong> ${opt}</span>`;
+        btn.onclick = () => selectQuizOption(idx);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function selectQuizOption(selectedIdx) {
+      const q = quizQuestions[currentQIndex];
+      const optionsContainer = document.getElementById('quiz-options');
+      const buttons = optionsContainer.querySelectorAll('button');
+      const feedback = document.getElementById('quiz-feedback');
+
+      buttons.forEach(b => b.disabled = true);
+
+      if (selectedIdx === q.correct) {
+        quizScore += 1;
+        document.getElementById('quiz-score').textContent = `స్కోరు: ${quizScore}`;
+        buttons[selectedIdx].classList.add('border-emerald-500', 'bg-emerald-950/40', 'text-emerald-300');
+        feedback.className = 'mt-4 p-3 rounded-xl text-xs leading-relaxed bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 block';
+        feedback.innerHTML = `<strong>సరైన సమాధానం!</strong> ${q.explanation}`;
+      } else {
+        buttons[selectedIdx].classList.add('border-red-500', 'bg-red-950/40', 'text-red-300');
+        buttons[q.correct].classList.add('border-emerald-500', 'bg-emerald-950/40', 'text-emerald-300');
+        feedback.className = 'mt-4 p-3 rounded-xl text-xs leading-relaxed bg-red-950/40 border border-red-500/40 text-red-300 block';
+        feedback.innerHTML = `<strong>తప్పు సమాధానం!</strong> ${q.explanation}`;
+      }
+
+      document.getElementById('quiz-next-btn').classList.remove('hidden');
+    }
+
+    function nextQuestion() {
+      if (currentQIndex < quizQuestions.length - 1) {
+        currentQIndex++;
+        loadQuizQuestion();
+      } else {
+        const optionsContainer = document.getElementById('quiz-options');
+        document.getElementById('quiz-question').innerHTML = `🎉 జాగ్రఫీ క్విజ్ పూర్తయింది!<br><span class="text-sm font-normal text-slate-300">మీ తుది స్కోరు: ${quizScore} / ${quizQuestions.length}</span>`;
+        optionsContainer.innerHTML = `
+          <div class="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/40 text-center text-xs text-cyan-200">
+            ${quizScore >= 4 ? 'అద్భుతం! ఖగోళ భూగోళశాస్త్రం కాన్సెప్టులపై మంచి పట్టు సాధించారు.' : 'బాగుంది! మైండ్‌మ్యాప్ మరియు విజువల్ డయాగ్రమ్‌లను మరోసారి రివైజ్ చేయండి.'}
+          </div>
+        `;
+        document.getElementById('quiz-feedback').classList.add('hidden');
+        document.getElementById('quiz-next-btn').classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
